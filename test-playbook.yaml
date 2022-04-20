@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: jenkins
   pre_tasks:
     - name: Install python pip3
       package:
