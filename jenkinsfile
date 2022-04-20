@@ -1,7 +1,7 @@
 pipeline {
   agent { label 'linux' }
   environment {
-   KUBECONFIG=credentials( kubeid ) 
+   KUBECONFIG=credentials('kubeid') 
   }
   stages {
     stage('Hello') {
