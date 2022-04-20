@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  pre_tasks:
+    - name: Install python pip3
+      package:
+        name: python3-pip
+        state: present
+    - name: install requirements
+      pip:
+        name:
+          - kubernetes
+  collections:
+    - kubernetes.core
+  environment:
+    - KUBECONFIG: "./config.yaml"
+  tasks:
+    - name: Get K8S_AUTH_KUBECONFIG
+      set_fact:
+        k8s_auth_kubeconfig: "{{ lookup('env', 'KUBECONFIG') }}"
+    - name: Get an existing Service object
+      k8s_info:
+        api_version: v1
+        kind: Pod
+      register: pod_list

@@ -1,0 +1,14 @@
+pipeline {
+  agent { label 'linux' }
+  environment {
+   KUBECONFIG=credentials('kubeid') 
+  }
+  stages {
+    stage('Hello') {
+      steps {
+        sh 'ansible-galaxy collection install -r requirements.yml'
+        sh 'ansible-playbook test-playbook.yaml'
+      }
+    }
+  }
+}
