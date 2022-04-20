@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('dev') {
       steps {
-        sh 'ansible-galaxy collection install -r requirements.yaml'
+        // sh 'ansible-galaxy collection install -r requirements.yaml'
         sh 'ansible-playbook test-playbook.yaml  --extra-vars config=$KUBECONFIG'
       }
     }
