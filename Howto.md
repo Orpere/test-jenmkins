@@ -4,7 +4,7 @@
 2. [X] Create a Job or use a previous Job
 3. [X] Configure your jenkins file to resolve dependencies and reconise the secret
 4. [X] Configure your roles to run k8s module
-5. [ ] Run the role on your job
+5. [X] Run the role on your job
 
 * Add a secret to your jenkins credentials
 
