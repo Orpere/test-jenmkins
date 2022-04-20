@@ -4,8 +4,9 @@ pipeline {
    KUBECONFIG=credentials('kubeid') 
   }
   stages {
-    stage('Hello') {
+    stage('dev') {
       steps {
+        sh 'apt-get install -y ansible'
         sh 'ansible-galaxy collection install -r requirements.yml'
         sh 'ansible-playbook test-playbook.yaml  --extra-vars config=$KUBECONFIG'
       }
