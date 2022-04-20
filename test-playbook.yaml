@@ -12,7 +12,7 @@
   collections:
     - kubernetes.core
   environment:
-    - KUBECONFIG: "./config.yaml"
+    - KUBECONFIG: "{{config}}"
   tasks:
     - name: Get K8S_AUTH_KUBECONFIG
       set_fact:
