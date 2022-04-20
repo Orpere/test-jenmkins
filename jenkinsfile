@@ -7,8 +7,8 @@ pipeline {
     stage('dev') {
       steps {
         sh 'sudo apt-get update'
-        sh ' ansible-galaxy collection install kubernetes.core'
-        sh 'ansible-playbook test-playbook.yaml  --extra-vars config=$KUBECONFIG -vvv'
+        sh 'ansible-galaxy collection install kubernetes.core'
+        sh 'ansible-playbook test-playbook.yaml  --extra-vars config=$KUBECONFIG'
       }
     }
   }
