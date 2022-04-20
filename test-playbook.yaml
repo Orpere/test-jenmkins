@@ -4,9 +4,7 @@
     - name: Install python pip3
       package:
         name:
-         - python3 
          - python3-pip
-        become: true
         state: present
     - name: install requirements
       pip:
