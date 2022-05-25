@@ -1,7 +1,7 @@
 pipeline {
-  agent { label 'linux' }
+  agent { label 'any' }
   environment {
-   KUBECONFIG=credentials('K8s-sandbox') 
+   KUBECONFIG=credentials('fusion-kubeconfig-dev-cluster') 
   }
   stages {
     stage('dev') {
