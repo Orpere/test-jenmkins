@@ -1,7 +1,7 @@
 pipeline {
   agent any 
   environment {
-   KUBECONFIG=credentials('fusion-kubeconfig-dev-cluster') 
+   KUBECONFIG=credentials('k8s-boavkmaster') 
   }
   stages {
     stage('dev') {
