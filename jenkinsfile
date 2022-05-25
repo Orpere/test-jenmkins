@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('dev') {
       steps {
-        sh 'sudo apt-get update'
+        #sh 'sudo apt-get update'
         sh 'ansible-galaxy collection install kubernetes.core'
         sh 'ansible-galaxy collection install cloud.common'
         sh 'ansible-playbook test-playbook.yaml  --extra-vars config=$KUBECONFIG'
