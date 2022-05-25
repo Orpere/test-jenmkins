@@ -11,6 +11,7 @@
         name:
           - kubernetes
           - openshift
+      ignore_errors: yes
   collections:
     - kubernetes.core
   environment:
